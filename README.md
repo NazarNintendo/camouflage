@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![License](https://img.shields.io/github/license/NazarNintendo/camouflage)
 ![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)
-![Tests](https://github.com/NazarNintendo/camouflage/actions/workflows/tests.yml/badge.svg)
+![Tests](https://github.com/NazarNintendo/camouflage/actions/workflows/lint_and_test.yml/badge.svg)
 
 > **Anonymize. Protect. Restore.**  
 > Flexible and reversible anonymization for modern Python workflows.
