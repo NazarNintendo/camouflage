@@ -12,7 +12,7 @@ def extract_module_name(filepath: str) -> str:
 
     Raises:
         ValueError: If the module name is not a valid Python identifier.
-    
+
     """
     module_name = os.path.basename(filepath).replace(".py", "")
     if not module_name.isidentifier():

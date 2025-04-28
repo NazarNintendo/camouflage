@@ -4,7 +4,9 @@ from .registry import _ANONYMIZER_REGISTRY
 from .transform import Transform
 
 
-def anonymize(facet: str, original_value: Any, transform: Transform | None = None) -> Any:
+def anonymize(
+    facet: str, original_value: Any, transform: Transform | None = None
+) -> Any:
     """Anonymize a given value based on the specified facet and transform.
 
     Args:

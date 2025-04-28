@@ -1,6 +1,6 @@
 import pytest
 
-from src.registry import register_anonymizer, _ANONYMIZER_REGISTRY
+from src.registry import _ANONYMIZER_REGISTRY, register_anonymizer
 
 
 def dummy_generator_fn(value):
@@ -27,7 +27,9 @@ def test_register_new_anonymizer_successfully():
 def test_register_duplicate_anonymizer_raises():
     register_anonymizer("test_facet", dummy_generator_fn)
 
-    with pytest.raises(ValueError, match=r"Anonymizer for facet \[test_facet\] already registered"):
+    with pytest.raises(
+        ValueError, match=r"Anonymizer for facet \[test_facet\] already registered"
+    ):
         register_anonymizer("test_facet", another_dummy_generator_fn)
 
 

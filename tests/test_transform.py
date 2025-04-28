@@ -18,14 +18,18 @@ def test_facet_transform_add_and_retrieve():
 def test_facet_transform_missing_forward_raises():
     ft = FacetTransform()
 
-    with pytest.raises(ValueError, match=r"No anonymized value found for original value \[missing\]"):
+    with pytest.raises(
+        ValueError, match=r"No anonymized value found for original value \[missing\]"
+    ):
         ft.get_forward("missing")
 
 
 def test_facet_transform_missing_backward_raises():
     ft = FacetTransform()
 
-    with pytest.raises(ValueError, match=r"No original value found for anonymized value \[missing\]"):
+    with pytest.raises(
+        ValueError, match=r"No original value found for anonymized value \[missing\]"
+    ):
         ft.get_backward("missing")
 
 
@@ -42,14 +46,18 @@ def test_transform_add_and_retrieve_forward_and_backward():
 def test_transform_forward_missing_facet_raises():
     transform = Transform()
 
-    with pytest.raises(ValueError, match=r"No facet transform found for facet \[unknown_facet\]"):
+    with pytest.raises(
+        ValueError, match=r"No facet transform found for facet \[unknown_facet\]"
+    ):
         transform.get_forward("unknown_facet", "some_value")
 
 
 def test_transform_backward_missing_facet_raises():
     transform = Transform()
 
-    with pytest.raises(ValueError, match=r"No facet transform found for facet \[unknown_facet\]"):
+    with pytest.raises(
+        ValueError, match=r"No facet transform found for facet \[unknown_facet\]"
+    ):
         transform.get_backward("unknown_facet", "some_value")
 
 
@@ -100,10 +108,14 @@ def test_different_transforms_same_facet_independent():
 
     # transform1 should only know about original1 -> anonymized1
     assert transform1.get_forward("shared_facet", "original1") == "anonymized1"
-    with pytest.raises(ValueError, match=r"No anonymized value found for original value \[original2\]"):
+    with pytest.raises(
+        ValueError, match=r"No anonymized value found for original value \[original2\]"
+    ):
         transform1.get_forward("shared_facet", "original2")
 
     # transform2 should only know about original2 -> anonymized2
     assert transform2.get_forward("shared_facet", "original2") == "anonymized2"
-    with pytest.raises(ValueError, match=r"No anonymized value found for original value \[original1\]"):
+    with pytest.raises(
+        ValueError, match=r"No anonymized value found for original value \[original1\]"
+    ):
         transform2.get_forward("shared_facet", "original1")

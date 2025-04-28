@@ -29,7 +29,9 @@ def test_anonymize_without_transform():
 
 
 def test_anonymize_without_registered_anonymizer_raises():
-    with pytest.raises(ValueError, match=r"No anonymizer registered for facet \[unknown_facet\]"):
+    with pytest.raises(
+        ValueError, match=r"No anonymizer registered for facet \[unknown_facet\]"
+    ):
         anonymize("unknown_facet", "original_value")
 
 
@@ -41,8 +43,12 @@ def test_anonymize_with_transform_new_value():
 
     # Should generate and store the mapping
     assert anonymized == "anon_original_value"
-    assert transform.get_forward("test_facet", "original_value") == "anon_original_value"
-    assert transform.get_backward("test_facet", "anon_original_value") == "original_value"
+    assert (
+        transform.get_forward("test_facet", "original_value") == "anon_original_value"
+    )
+    assert (
+        transform.get_backward("test_facet", "anon_original_value") == "original_value"
+    )
 
 
 def test_anonymize_with_transform_existing_value():

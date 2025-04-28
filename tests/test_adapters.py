@@ -25,7 +25,10 @@ def test_anonymizer_init_with_unregistered_facet():
     # Test initializing PandasAdapter with an unregistered facet
     _ANONYMIZER_REGISTRY["registered_facet"] = mock_anonymizer
 
-    with pytest.raises(ValueError, match=r"Facet \[unregistered_facet\] is not registered in the anonymizer registry."):
+    with pytest.raises(
+        ValueError,
+        match=r"Facet \[unregistered_facet\] is not registered in the anonymizer registry.",
+    ):
         PandasAdapter(mapper={"column1": "unregistered_facet"})
 
 
@@ -70,8 +73,12 @@ def test_anonymize_with_multiple_columns():
     _ANONYMIZER_REGISTRY["facet2"] = mock_anonymizer
     pd_adapter = PandasAdapter(mapper={"column1": "facet1", "column2": "facet2"})
 
-    df = pd.DataFrame({"column1": ["value1", "value2", "value3"],
-                       "column2": ["valueA", "valueB", "valueC"]})
+    df = pd.DataFrame(
+        {
+            "column1": ["value1", "value2", "value3"],
+            "column2": ["valueA", "valueB", "valueC"],
+        }
+    )
 
     df_anonymized = pd_adapter.anonymize(df)
 
@@ -95,8 +102,13 @@ def test_deanonymize_with_missing_facet():
     _ANONYMIZER_REGISTRY["facet1"] = mock_deanonymizer
     pd_adapter = PandasAdapter(mapper={"column1": "facet1"})
 
-    df_anonymized = pd.DataFrame({"column1": ["anon_value1", "anon_value2", "anon_value3"]})
+    df_anonymized = pd.DataFrame(
+        {"column1": ["anon_value1", "anon_value2", "anon_value3"]}
+    )
 
     # Test missing facet (because of the absent forward anonymization)
-    with pytest.raises(ValueError, match=r"No facet transform found for facet \[facet1\] in transform \[([0-9a-fA-F-]+)\]"):
+    with pytest.raises(
+        ValueError,
+        match=r"No facet transform found for facet \[facet1\] in transform \[([0-9a-fA-F-]+)\]",
+    ):
         pd_adapter.deanonymize(df_anonymized)

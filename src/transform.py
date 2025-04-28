@@ -15,6 +15,7 @@ class FacetTransform:
         backward (dict): A dictionary mapping anonymized values to original values.
 
     """
+
     forward: dict = field(default_factory=dict)
     backward: dict = field(default_factory=dict)
 
@@ -46,7 +47,9 @@ class FacetTransform:
 
         """
         if original_value not in self.forward:
-            raise ValueError(f"No anonymized value found for original value [{original_value}]")
+            raise ValueError(
+                f"No anonymized value found for original value [{original_value}]"
+            )
 
         return self.forward[original_value]
 
@@ -64,7 +67,9 @@ class FacetTransform:
 
         """
         if anonymized_value not in self.backward:
-            raise ValueError(f"No original value found for anonymized value [{anonymized_value}]")
+            raise ValueError(
+                f"No original value found for anonymized value [{anonymized_value}]"
+            )
 
         return self.backward[anonymized_value]
 
@@ -76,9 +81,9 @@ class Transform:
 
     def add(self, facet: str, original_value: Any, anonymized_value: Any) -> None:
         """Adds a transform between original and anonymized values for a specific facet.
-        
+
         This method creates a new facet transform if it doesn't already exist.
-        
+
         Args:
             facet (str): The facet to which the transform belongs.
             original_value (Any): The original value to be anonymized.
@@ -108,7 +113,9 @@ class Transform:
 
         """
         if facet not in self.facet_transforms:
-            raise ValueError(f"No facet transform found for facet [{facet}] in transform [{self.uuid}]")
+            raise ValueError(
+                f"No facet transform found for facet [{facet}] in transform [{self.uuid}]"
+            )
 
         return self.facet_transforms[facet].get_forward(original_value)
 
@@ -127,7 +134,9 @@ class Transform:
 
         """
         if facet not in self.facet_transforms:
-            raise ValueError(f"No facet transform found for facet [{facet}] in transform [{self.uuid}]")
+            raise ValueError(
+                f"No facet transform found for facet [{facet}] in transform [{self.uuid}]"
+            )
 
         return self.facet_transforms[facet].get_backward(anonymized_value)
 

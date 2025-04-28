@@ -1,5 +1,5 @@
 import random
-from datetime import timedelta, datetime
+from datetime import datetime, timedelta
 
 from ..registry import register_anonymizer
 from ..utils import extract_module_name

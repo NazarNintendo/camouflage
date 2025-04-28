@@ -56,7 +56,7 @@ def test_generator_fn_ipv4():
 
         assert isinstance(result, str)
 
-        parts = result.split('.')
+        parts = result.split(".")
         assert len(parts) == 4
         assert all(part.isdigit() for part in parts)
         assert all(0 <= int(part) <= 255 for part in parts)

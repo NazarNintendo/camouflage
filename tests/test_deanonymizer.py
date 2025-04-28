@@ -16,7 +16,9 @@ def test_deanonymize_missing_facet_raises():
     transform = Transform()
     transform.add("facet1", "original_value", "anonymized_value")
 
-    with pytest.raises(ValueError, match=r"No facet transform found for facet \[unknown_facet\]"):
+    with pytest.raises(
+        ValueError, match=r"No facet transform found for facet \[unknown_facet\]"
+    ):
         deanonymize("unknown_facet", "anonymized_value", transform)
 
 
@@ -24,7 +26,10 @@ def test_deanonymize_missing_anonymized_value_raises():
     transform = Transform()
     transform.add("facet1", "original_value", "anonymized_value")
 
-    with pytest.raises(ValueError, match=r"No original value found for anonymized value \[unknown_value\]"):
+    with pytest.raises(
+        ValueError,
+        match=r"No original value found for anonymized value \[unknown_value\]",
+    ):
         deanonymize("facet1", "unknown_value", transform)
 
 

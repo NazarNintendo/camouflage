@@ -5,7 +5,7 @@
 ![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)
 ![Tests](https://github.com/NazarNintendo/camouflage/actions/workflows/tests.yml/badge.svg)
 
-> **Anonymize. Protect. Restore.**  
+> **Anonymize. Protect. Restore.**
 > Flexible and reversible anonymization for modern Python workflows.
 
 ---
@@ -128,12 +128,12 @@ def anonymize_color(_):  # It is crucial for the anonymizer to accept a single a
 
 def anonymize_red_channel(original_hex):
     hex_color = original_hex.lstrip('#')
-    
+
     green = hex_color[2:4]
     blue = hex_color[4:6]
-    
+
     random_red = random.randint(0, 255)
-    
+
     return "#{:02X}{}{}".format(random_red, green, blue)
 ```
 
