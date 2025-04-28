@@ -48,5 +48,6 @@ repos:
     hooks:
       - id: check-merge-conflict
       - id: trailing-whitespace
+        exclude: README.md
       - id: end-of-file-fixer
       - id: debug-statements

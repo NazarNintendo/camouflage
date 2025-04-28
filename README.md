@@ -5,7 +5,7 @@
 ![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)
 ![Tests](https://github.com/NazarNintendo/camouflage/actions/workflows/tests.yml/badge.svg)
 
-> **Anonymize. Protect. Restore.**
+> **Anonymize. Protect. Restore.**  
 > Flexible and reversible anonymization for modern Python workflows.
 
 ---
@@ -25,14 +25,7 @@ fast, lightweight, and fully customizable.
 
 # 📈 How it Works
 
-```mermaid
-flowchart LR
-    A[Original Dataset] --> B(Anonymizer)
-    B --> C[Anonymized Dataset]
-    C --> D(Processing / Sharing / Storage)
-    D --> E(De-anonymizer)
-    E --> F[Original Dataset Restored]
-```
+Camouflage uses a **one-to-one mapping** to anonymize data. It generates a unique, consistent, and reversible mapping for each value. See [Bijection](https://en.wikipedia.org/wiki/Bijection) on Wikipedia.
 
 Camouflage guarantees that every anonymized value is **unique**, **consistent**, and **traceable back** — only when you need it.
 
