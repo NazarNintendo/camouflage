@@ -228,5 +228,5 @@ Camouflage is built to **empower** privacy-first applications without slowing yo
 
 # 🔗 Links
 
-Source Code: https://github.com/NazarNintendo/camouflage
+Source Code: https://github.com/NazarNintendo/camouflage  
 PyPI: https://pypi.org/project/camouflage/
