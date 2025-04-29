@@ -1,7 +1,7 @@
 import pytest
 
-from src.deanonymizer import deanonymize
-from src.transform import Transform
+from camouflage.deanonymizer import deanonymize
+from camouflage.transform import Transform
 
 
 def test_deanonymize_success():

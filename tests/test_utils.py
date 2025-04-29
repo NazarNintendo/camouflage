@@ -1,6 +1,6 @@
 import pytest
 
-from src.utils import extract_module_name
+from camouflage.utils import extract_module_name
 
 
 def test_valid_filename():

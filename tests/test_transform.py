@@ -2,7 +2,7 @@ from uuid import UUID
 
 import pytest
 
-from src.transform import FacetTransform, Transform
+from camouflage.transform import FacetTransform, Transform
 
 
 def test_facet_transform_add_and_retrieve():

@@ -1,8 +1,8 @@
 import pandas as pd
 import pytest
 
-from src.adapters import PandasAdapter
-from src.registry import _ANONYMIZER_REGISTRY
+from camouflage.adapters import PandasAdapter
+from camouflage.registry import _ANONYMIZER_REGISTRY
 
 
 # Mock anonymizer for test cases

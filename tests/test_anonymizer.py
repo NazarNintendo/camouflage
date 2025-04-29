@@ -2,9 +2,9 @@ from unittest.mock import Mock
 
 import pytest
 
-from src.anonymizer import anonymize
-from src.registry import _ANONYMIZER_REGISTRY
-from src.transform import Transform
+from camouflage.anonymizer import anonymize
+from camouflage.registry import _ANONYMIZER_REGISTRY
+from camouflage.transform import Transform
 
 
 @pytest.fixture(autouse=True)

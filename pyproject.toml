@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "camouflage"
-version = "1.0.2"
+version = "1.0.3"
 dependencies = [
     "Faker ~= 37.0",
     "pandas ~= 2.0",
@@ -37,3 +37,10 @@ classifiers = [
 [project.urls]
 Repository = "https://github.com/NazarNintendo/camouflage"
 Issues = "https://github.com/NazarNintendo/camouflage/issues"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests"]

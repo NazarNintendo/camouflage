@@ -1,12 +1,12 @@
 import random
 from datetime import datetime, timedelta
 
-from src.plugins.age import generator_fn as age_generator_fn
-from src.plugins.amount import generator_fn as amount_generator_fn
-from src.plugins.country import generator_fn as country_generator_fn
-from src.plugins.datetime import generator_fn as datetime_generator_fn
-from src.plugins.ipv4 import generator_fn as ipv4_generator_fn
-from src.plugins.user_agent import generator_fn as user_agent_generator_fn
+from camouflage.plugins.age import generator_fn as age_generator_fn
+from camouflage.plugins.amount import generator_fn as amount_generator_fn
+from camouflage.plugins.country import generator_fn as country_generator_fn
+from camouflage.plugins.datetime import generator_fn as datetime_generator_fn
+from camouflage.plugins.ipv4 import generator_fn as ipv4_generator_fn
+from camouflage.plugins.user_agent import generator_fn as user_agent_generator_fn
 
 RUNS = 1000  # Number of runs for the tests
 

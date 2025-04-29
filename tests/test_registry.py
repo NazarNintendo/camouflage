@@ -1,6 +1,6 @@
 import pytest
 
-from src.registry import _ANONYMIZER_REGISTRY, register_anonymizer
+from camouflage.registry import _ANONYMIZER_REGISTRY, register_anonymizer
 
 
 def dummy_generator_fn(value):
