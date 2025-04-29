@@ -1,12 +1,22 @@
 # Camouflage 🛡️
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![License](https://img.shields.io/github/license/NazarNintendo/camouflage)
 ![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)
 ![Tests](https://github.com/NazarNintendo/camouflage/actions/workflows/lint_and_test.yml/badge.svg)
 
 > **Anonymize. Protect. Restore.**  
 > Flexible and reversible anonymization for modern Python workflows.
+
+---
+
+### Ready to get started?
+
+Install Camouflage with pip:
+
+```bash
+pip install camouflage
+```
 
 ---
 
@@ -195,6 +205,15 @@ df_safe = pd_adapter.anonymize(df)
 
 ---
 
+# 🧪 Testing
+
+Run tests on your setup with:
+
+```bash
+pip install pytest
+pytest
+```
+
 # 📜 License
 
 MIT License — do whatever you want, but be cool. ✌️
@@ -207,14 +226,7 @@ Camouflage is built to **empower** privacy-first applications without slowing yo
 
 ---
 
-# ✨ Ready to get started?
-
-```bash
-pip install camouflage
-```
-
----
-
 # 🔗 Links
 
 Source Code: https://github.com/NazarNintendo/camouflage
+PyPI: https://pypi.org/project/camouflage/
