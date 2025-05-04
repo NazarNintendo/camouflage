@@ -17,6 +17,6 @@ def extract_module_name(filepath: str) -> str:
     module_name = os.path.basename(filepath).replace(".py", "")
     if not module_name.isidentifier():
         raise ValueError(
-            f"Invalid plugin filename [{module_name}]. Must be a valid Python identifier."
+            f"Invalid filename [{module_name}]. Must be a valid Python identifier."
         )
     return module_name

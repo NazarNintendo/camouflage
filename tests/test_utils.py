@@ -12,16 +12,16 @@ def test_valid_filename():
 
 
 def test_invalid_filename():
-    with pytest.raises(ValueError, match=r"Invalid plugin filename \[invalid-module\]"):
+    with pytest.raises(ValueError, match=r"Invalid filename \[invalid-module\]"):
         extract_module_name("/path/to/invalid-module.py")
 
-    with pytest.raises(ValueError, match=r"Invalid plugin filename \[123module\]"):
+    with pytest.raises(ValueError, match=r"Invalid filename \[123module\]"):
         extract_module_name("/path/to/123module.py")
 
-    with pytest.raises(ValueError, match=r"Invalid plugin filename \[module\ name\]"):
+    with pytest.raises(ValueError, match=r"Invalid filename \[module\ name\]"):
         extract_module_name("/path/to/module name.py")
 
 
 def test_empty_string():
-    with pytest.raises(ValueError, match=r"Invalid plugin filename \[\]"):
+    with pytest.raises(ValueError, match=r"Invalid filename \[\]"):
         extract_module_name("")

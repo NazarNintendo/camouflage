@@ -1,4 +1,4 @@
-from . import plugins
+from . import facets
 from .adapters import PandasAdapter
 from .anonymizer import anonymize
 from .deanonymizer import deanonymize

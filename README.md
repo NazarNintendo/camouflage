@@ -26,7 +26,7 @@ Camouflage lets you easily **anonymize** sensitive data, **store** reversible ma
 fast, lightweight, and fully customizable.
 
 - 🔥 Anonymize large datasets quickly.
-- 🛠️ Add your **own plugins** easily (your data, your rules).
+- 🛠️ Add your **own anonymizers** easily (your data, your rules).
 - 🔄 Reversible by design — restore original values without headaches.
 - 🧪 **100% test coverage** for maximum trust.
 - 🏎️ Tested on datasets with over **100,000 rows** across **6 columns** — handles big data smoothly.
@@ -35,9 +35,23 @@ fast, lightweight, and fully customizable.
 
 # 📈 How it Works
 
-Camouflage uses a **one-to-one mapping** to anonymize data. It generates a unique, consistent, and reversible mapping for each value. See [Bijection](https://en.wikipedia.org/wiki/Bijection) on Wikipedia.
+Camouflage uses a **one-to-one mapping** to anonymize data. It generates a unique, consistent, and reversible mapping for each value.
+See [Bijection](https://en.wikipedia.org/wiki/Bijection) on Wikipedia.
 
-Camouflage guarantees that every anonymized value is **unique**, **consistent**, and **traceable back** — only when you need it.
+Camouflage guarantees that every anonymized value is **unique**, **consistent**, and **traceable back** — only when you need it. There are predefined
+anonymizers for common data types (**facets**), and you can easily add your own.
+
+### Available Facets
+
+| facet      | description                                | example               |
+|:-----------|:-------------------------------------------|:----------------------|
+| age        | An `int` representing the age of a person. | 25                    |
+| amount     | A `float` representing a monetary amount.  | 100.50                |
+| country    | A `str` representing a country name.       | Germany               |
+| datetime   | A `datetime.datetime` object.              | 2023-02-01 00:00:00   |
+| ipv4       | A `str` representing an IPv4 address.      | 213.209.12.210        |
+| user_agent | A `str` representing a user agent.         | Mozilla/5.0 (Windows) |
+| ...        | Coming soon...                             | ...                   |
 
 ---
 
@@ -200,7 +214,7 @@ df_safe = pd_adapter.anonymize(df)
 - ✅ **100% code coverage** (Pytest + Coverage)
 - ✅ **PEP8 compliant**, linted
 - ✅ **Fast anonymization** for datasets of **100,000+ rows**
-- ✅ **Extensible plugin system**
+- ✅ **Extensible facet system**
 - ✅ **Tested** and **battle-ready**
 
 ---
